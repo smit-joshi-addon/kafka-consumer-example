@@ -12,11 +12,11 @@ public class KafkaMessageListener {
 
 	Logger logger = LoggerFactory.getLogger(KafkaMessageListener.class);
 
-	@KafkaListener(topics = "customTopic",groupId = "sj-consumer-group")
+	@KafkaListener(topics = "customTopic", groupId = "sj-consumer-group")
 	public void consume1(Customer message) {
 		logger.info("Consumer1 consume the message {}", message);
 	}
-	
+
 //	@KafkaListener(topics = "customTopic",groupId = "sj-consumer-group")
 //	public void consume2(String message) {
 //		logger.info("Consumer2 consume the message {}", message);

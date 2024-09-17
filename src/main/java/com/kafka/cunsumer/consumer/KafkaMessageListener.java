@@ -13,9 +13,16 @@ public class KafkaMessageListener {
 	Logger logger = LoggerFactory.getLogger(KafkaMessageListener.class);
 
 	@KafkaListener(topics = "customTopic", groupId = "sj-consumer-group")
-	public void consume1(Customer message) {
+	public void consumeEvents(Customer message) {
 		logger.info("Consumer1 consume the message {}", message);
 	}
+
+//	// READ FROM SPECIFIC PARTITION
+//	@KafkaListener(topics = "customTopic", groupId = "sj-consumer-group", topicPartitions = {
+//			@TopicPartition(topic = "customTopic", partitions = { "2" }) })
+//	public void consume(String message) {
+//		logger.info("Consumer 1 is consuming message {}", message);
+//	}
 
 //	@KafkaListener(topics = "customTopic",groupId = "sj-consumer-group")
 //	public void consume2(String message) {
